@@ -50,6 +50,8 @@ XFCE_PATCH_URL='https://bugzilla.xfce.org/attachment.cgi?id=3482'
 TAVINUS_PATCH_URL='https://raw.githubusercontent.com/tavinus/xap.sh/master/patches/patch3482.patch'
 PATCH_URL="$XFCE_PATCH_URL"
 
+# will use local patch if found
+LOCAL_PATCH_FILE="$(dirname $0)/patches/patch3482.patch"
 
 # Basic Sanity
 init_check() {
@@ -108,14 +110,21 @@ main() {
 	cd thunar-* >/dev/null 2>&1 || initError "Could not relocate to Thunar source folder"
 	message_ends
 
-	XAP_STATUS="Downloading Patch"
-	message_starts
-	if [[ -x "$WGET_BIN" ]]; then
-		dRun "$WGET_BIN" "$PATCH_URL" -O patch3482.patch || initError "Could not download Patch"
+	if [[ -f "$LOCAL_PATCH_FILE" ]]; then
+		XAP_STATUS="Using local patch file: $LOCAL_PATCH_FILE"
+		message_starts
+		dRun cp "$LOCAL_PATCH_FILE" ./ || initError "Could not copy Patch to work folder"
+		message_ends
 	else
-		dRun "$CURL_BIN" -L "$PATCH_URL" -o patch3482.patch || initError "Could not download Patch"
+		XAP_STATUS="Downloading Patch"
+		message_starts
+		if [[ -x "$WGET_BIN" ]]; then
+			dRun "$WGET_BIN" "$PATCH_URL" -O patch3482.patch || initError "Could not download Patch"
+		else
+			dRun "$CURL_BIN" -L "$PATCH_URL" -o patch3482.patch || initError "Could not download Patch"
+		fi
+		message_ends
 	fi
-	message_ends
 
 	XAP_STATUS="Testing patch with --dry-run"
 	command -v patch >/dev/null 2>&1 || initError "'patch' executable was not found. We need it installed and visible in \$PATH."
