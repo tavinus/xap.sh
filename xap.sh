@@ -149,16 +149,22 @@ main() {
 
 	XAP_STATUS="Installing: $(basename $libthunarx_deb)"
 	message_starts
-	dRun sudo dpkg -i "$libthunarx_deb" || initError "Could not install $(basename $libthunarx_deb)"
-	message_ends
-
-#	XAP_STATUS="Checking for dependencies problems"
-#	message_starts
-#	sudo apt-get install -f -y >/dev/null 2>&1 || initError "Error when checking dependencies for thunar"
-#	dRun sudo apt-get install -f -y || initError "Error when checking dependencies for thunar"
-#	message_ends
-
-	echo $'\nSuccess! Please reboot to apply the changes in thunar!\n'
+	if dRun sudo dpkg -i "$libthunarx_deb"; then
+		message_ends
+		echo $'\nSuccess! Please reboot to apply the changes in thunar!\n'
+	else
+		message_ends
+		echo $'\n'"Errors were detected during install, making sure we have a sane environment"
+		XAP_STATUS="Checking for dependencies problems"
+		message_starts
+		dRun sudo apt-get install -f -y || initError "Error when fixing dependency problems"
+		message_ends
+		echo $'\n'"Seems like you had a broken or not up-to-date thunar install."
+		echo "XAP tried to fix the install, but you may need to run:"
+		echo "sudo apt-get update && sudo apt-get upgrade"
+		echo "and then try running XAP again."
+		echo "It is also possible that things are already working fine after the fix."
+	fi
 
 	check_workdir_delete "The work directory with sources and deb packages can be removed now." 'KEEPCHECK'
 
