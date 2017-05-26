@@ -14,13 +14,15 @@ The easiest way is through `Software Updater → Settings → Ubuntu Software Ta
 See screenshots at the end of this page.
   
 ## Patch to be applied:
-https://bugzilla.xfce.org/attachment.cgi?id=3482
+https://bugzilla.xfce.org/attachment.cgi?id=3482  
+https://raw.githubusercontent.com/tavinus/xap.sh/master/patches/patch3482.patch)
+
   
 ## Related Links:
 
 ## Help Info
 ```
-$ ./xap.sh -h
+$ ./xap.sh --help
 
 XAP - XFCE Actions Patcher v0.0.1
 
@@ -29,24 +31,105 @@ Usage: xap.sh [-f]
 Options:
   -V, --version           Show program name and version and exits
   -h, --help              Show this help screen and exits
+  -m, --mirror            Use my github mirror for the patch, instead of
+                          the original xfce bugzilla link.
+      --debug             Debug mode, prints to screen instead of logfile.
+                          It is usually better to check the logfile:
+                          Use: tail -f /tmp/xap_run.log # in another terminal
   -f, --force             Do not ask to confirm system install
-  -d, --delete            Delete work folder without prompt if it exists.
-  -k, --keep              Keep work folder files at the end of execution,
-                          disables prompt.
+  -d, --delete            Do not ask to delete workfolder
+                          1. If it already exists when XAP starts
+                          2. When XAP finishes execution with success
+  -k, --keep              Do not ask to delete work folder at the end
+                          Keeps files when XAP finishes with success
 
-Use --delete and --keep together to delete at the start of execution
-(if exists) and keep work folder at the end without prompting anything.
+WORK FOLDER:
+ Location: /home/tavinus/xap_patch_temp
+ Use --delete and --keep together to delete at the start of execution
+ (if exists) and keep at the end without prompting anything.
 
 Notes:
   Please make sure you enable source-code repositories in your
   apt-sources. Easiest way is with the Updater GUI.
 
 Examples:
-  ./xap.sh        # will confirm install
-  ./xap.sh -f     # will install without asking
+  ./xap.sh             # will ask for confirmations
+  ./xap.sh -m          # using github mirror
+  ./xap.sh -f          # will install without asking
+  ./xap.sh -m -f -k -d # will not ask anything and keep temp files
+  ./xap.sh -m -f -d    # will not ask anything and delete temp files
 ```
-## Screenshots Xubuntu 16
-This shows how to enable source-code download at `Software Updater`.  
+
+## Example Runs
+#### Just running first time
+```
+$ ./xap.sh 
+
+XAP - XFCE Actions Patcher v0.0.1
+
+Checking for sudo executable and privileges, enter your password if needed.
+[sudo] password for tavinus: 
+Done | Updating package lists
+Done | Installing thunar, thunar-data and devscripts
+Done | Installing build dependencies for thunar
+Done | Preparing work dir: /home/tavinus/xap_patch_temp
+Done | Getting thunar source
+Done | Downloading Patch
+Done | Testing patch with --dry-run
+Done | Applying patch
+Done | Building deb packages with dpkg-buildpackage
+Done | Locating libthunarx deb package
+
+Proceed with package install? (Y/y to install) y
+Done | Installing: libthunarx-2-0_1.6.11-0ubuntu0.16.04.1_i386.deb
+
+Success! Please reboot to apply the changes in thunar!
+
+The work directory with sources and deb packages can be removed now.
+Dir: /home/tavinus/xap_patch_temp
+
+Do You want to delete the dir? (Y/y to delete) n
+Kept working dir!
+
+Ciao
+```
+#### No prompts, delete temp folder if already exists, keep temp files at the end  
+*This is also using the github mirror for the patch `-m`*
+```
+$ ./xap.sh -m -f -k -d
+
+XAP - XFCE Actions Patcher v0.0.1
+
+Work directory already exists! We need a clean dir to continue.
+Dir: /home/tavinus/xap_patch_temp
+Working dir removed successfully: /home/tavinus/xap_patch_temp
+Checking for sudo executable and privileges, enter your password if needed.
+Done | Updating package lists
+Done | Installing thunar thunar-data devscripts, we need these up-to-date
+Done | Installing build dependencies for thunar
+Done | Preparing work dir: /home/tavinus/xap_patch_temp
+Done | Getting thunar source
+Done | Downloading Patch
+Done | Testing patch with --dry-run
+Done | Applying patch
+Done | Building deb packages with dpkg-buildpackage
+Done | Locating libthunarx deb package
+Done | Installing: libthunarx-2-0_1.6.11-0ubuntu0.16.04.1_i386.deb
+
+Success! Please reboot to apply the changes in thunar!
+
+Keeping work dir: /home/tavinus/xap_patch_temp
+Ciao
+```
+#### Following log during execution
+Use this command on another terminal window  
+*You need to run this AFTER starting `xap`, obviusly*
+```
+tail -f /tmp/xap_run.log
+```
+# Screenshots
+## Enabling source-code repositories
+This shows how to enable source-code download at Xubuntu16 `Software Updater`.  
   
 ![xubuntu software update1](https://raw.githubusercontent.com/tavinus/xap.sh/master/screenshots/xubuntu16-01.jpg)  
   
