@@ -158,11 +158,11 @@ Examples:
   ./xap.sh -m -f -k -d # will not ask anything and keep temp files
   ./xap.sh -m -f -d    # will not ask anything and delete temp files
 ```
-# Patch to be applied:
+# Patch to be applied
  - https://bugzilla.xfce.org/attachment.cgi?id=3482  
  - https://raw.githubusercontent.com/tavinus/xap.sh/master/patches/patch3482.patch
 
-# Related Links:
+# Related Links
  - [Bug #899624 - ubuntu launchpad](https://bugs.launchpad.net/ubuntu/+source/thunar/+bug/899624?comments=all)
  - [thunar actions only on local drive - ubuntu forum](https://ubuntuforums.org/showthread.php?t=1889890)
 
