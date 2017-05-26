@@ -23,13 +23,13 @@ See screenshots at the end of this page.
 ## Download
 with `wget`
 ```
-wget 'https://raw.githubusercontent.com/tavinus/xap.sh/master/xap.sh' -O ./xap.sh && chmod +x ./chap.sh
+wget 'https://raw.githubusercontent.com/tavinus/xap.sh/master/xap.sh' -O ./xap.sh && chmod +x ./xap.sh
 ./xap.sh --help
 ```
 
 with `curl`
 ```
-curl -L 'https://raw.githubusercontent.com/tavinus/xap.sh/master/xap.sh' -o ./xap.sh && chmod +x ./chap.sh
+curl -L 'https://raw.githubusercontent.com/tavinus/xap.sh/master/xap.sh' -o ./xap.sh && chmod +x ./xap.sh
 ./xap.sh --help
 ```
 with `git`
