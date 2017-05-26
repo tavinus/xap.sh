@@ -100,13 +100,13 @@ Success! Please reboot to apply the changes in thunar!
 Keeping work dir: /home/tavinus/xap_patch_temp
 Ciao
 ```
-#### Following log during execution
+# Following `log file` during execution
 Use this command on another terminal window  
 *You need to run this AFTER starting `xap`, obviusly*
 ```
 tail -f /tmp/xap_run.log
 ```
-#### Help Info
+# Options
 ```
 $ ./xap.sh --help
 
