@@ -24,22 +24,27 @@ The easiest way is through `Software Updater → Settings → Ubuntu Software Ta
 Screenshots for Xubuntu16 available at the end of this page.
 ## Download
 **NOTE:** *If you use `git clone` or the [zip](https://github.com/tavinus/xap.sh/archive/master.zip), `xap.sh` will detect the local patch file and use it, instead of downloading it from the internet. This will also remove the dependency on `curl` or `wget` and disable the `--mirror` parameter.*  
-##### get only `xap.sh` using `wget`
+#### Clone using `git`
+```
+git clone https://github.com/tavinus/xap.sh.git
+cd xap.sh
+./xap.sh --help
+```
+#### Manual zip download
+1. [Download this repository zip file](https://github.com/tavinus/xap.sh/archive/master.zip).
+2. Extract the zip and open a `terminal` inside the `xap.sh` folder
+3. If `xap.sh` is not set as executable, use:
+    - `chmod +x ./xap.sh`
+4. You should be all set:
+    - `./xap.sh --help`
+#### Get only `xap.sh` using `wget`
 ```
 wget 'https://raw.githubusercontent.com/tavinus/xap.sh/master/xap.sh' -O ./xap.sh && chmod +x ./xap.sh
 ./xap.sh --help
 ```
-
-##### get only `xap.sh` using `curl`
+#### Get only `xap.sh` using `curl`
 ```
 curl -L 'https://raw.githubusercontent.com/tavinus/xap.sh/master/xap.sh' -o ./xap.sh && chmod +x ./xap.sh
-./xap.sh --help
-```
-##### clone everything using `git`
-
-```
-git clone https://github.com/tavinus/xap.sh.git
-cd xap.sh
 ./xap.sh --help
 ```
 # Example Runs
