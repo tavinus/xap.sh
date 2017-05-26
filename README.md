@@ -46,7 +46,7 @@ Examples:
   ./xap.sh -f     # will install without asking
 ```
 ## Screenshots Xubuntu 16
-This shows how to enable source-code download at `Software Updates`.  
+This shows how to enable source-code download at `Software Updater`.  
   
 ![xubuntu software update1](https://raw.githubusercontent.com/tavinus/xap.sh/master/screenshots/xubuntu16-01.jpg)  
   
