@@ -72,7 +72,7 @@ init_check() {
 		exit 2
 	fi
 	ps -e | grep -E '^.* xfce4-session$' > /dev/null || initError "No xfce4-session was found running, you would end up installing XFCE4 if you run this."$'\n'"Install xfce4 manually before XAP if you really want to add another desktop."
-	[[ ! -x "$WGET_BIN" && ! -x "$CURL_BIN" ]] && initError "You need to have either curl or wget installed to download the patch."
+	[[ ! -x "$WGET_BIN" && ! -x "$CURL_BIN" && ! -r "$LOCAL_PATCH_FILE" ]] && initError "No local patch and no curl or wget installed to download the patch."
 	command -v grep >/dev/null 2>&1 || initError "'grep' executable was not found. We need it installed and visible in \$PATH."
 	local apt_sources="$(cat /etc/apt/sources.list 2>/dev/null | grep deb-src | grep -v '^#')"
 	[[ -z "$apt_sources" ]] && initError "No source-code repositories were active in /etc/apt/sources.list."$'\n'"Please enable source-code repos and try again."
