@@ -10,7 +10,8 @@ The script will ask for confirmation before doing anything disruptive like delet
 ## Enable source-code repository
 This script uses `apt-get build-dep(s)` to prepare the environment.  
 In order to use this, you will need to have source-code repositoies enabled.  
-The easiest way is through `Software Updater → Preferences → Enable source-code download`.  
+The easiest way is through `Software Updater → Settings → Ubuntu Software Tab → Source code`.  
+See screenshots at the end of this page.
   
 ## Patch to be applied:
 https://bugzilla.xfce.org/attachment.cgi?id=3482
@@ -44,3 +45,9 @@ Examples:
   ./xap.sh        # will confirm install
   ./xap.sh -f     # will install without asking
 ```
+## Screenshots Xubuntu 16
+This shows how to enable source-code download at `Software Updates`.  
+  
+![xubuntu software update1](https://raw.githubusercontent.com/tavinus/xap.sh/master/screenshots/xubuntu16-01.jpg)  
+  
+![xubuntu software update2](https://raw.githubusercontent.com/tavinus/xap.sh/master/screenshots/xubuntu16-02.jpg)
