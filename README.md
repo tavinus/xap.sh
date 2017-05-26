@@ -39,7 +39,7 @@ git clone https://github.com/tavinus/xap.sh.git
 cd xap.sh
 ./xap.sh --help
 ```
-*If you use `git clone`, `xap` will detect the local patch file and use it, instead of downloading it from the internet.* 
+*If you use `git clone` or the zip/tarball, `xap` will detect the local patch file and use it, instead of downloading it from the internet.* 
 # Example Runs
 #### Just run
 ```
