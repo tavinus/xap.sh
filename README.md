@@ -40,7 +40,7 @@ cd xap.sh
 ./xap.sh --help
 ```
 # Example Runs
-#### Just running first time
+#### Just run
 ```
 $ ./xap.sh 
 
