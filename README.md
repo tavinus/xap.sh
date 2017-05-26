@@ -155,7 +155,7 @@ Examples:
 ```
 # Patch to be applied:
  - https://bugzilla.xfce.org/attachment.cgi?id=3482  
- - https://raw.githubusercontent.com/tavinus/xap.sh/master/patches/patch3482.patch)
+ - https://raw.githubusercontent.com/tavinus/xap.sh/master/patches/patch3482.patch
 
 # Related Links:
  - [Bug #899624 - ubuntu launchpad](https://bugs.launchpad.net/ubuntu/+source/thunar/+bug/899624?comments=all)
