@@ -8,7 +8,7 @@ Even the default action `Open terminal here` is disabled in network shares.
 **`xap.sh` will install apt-get packages and dependencies without confirmation,**   
 **it will only ask for confirmation to install the modified thunar package.**  
   
-`xap.sh` will ask for confirmation before deleting the work folder or installing Thunar.  
+`xap.sh` will ask for confirmation before deleting the work folder or installing the patched `thunar`.  
 It is possible to avoid the confirmations by using the execution parameters `-f`, `-k`, `-d`.  
 # Disclaimer
 *XAP should be safe and has been tested on Ubuntu16+XFCE4, Xubuntu16, Mint17.3 (32bit & 64bit), however...*  
