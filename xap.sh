@@ -81,7 +81,7 @@ main() {
 	dRun sudo apt-get update || initError "Could not update list of packages"
 	message_ends
 
-	XAP_STATUS="Installing thunar thunar-data devscripts"
+	XAP_STATUS="Installing thunar, thunar-data and devscripts"
 	message_starts
 	dRun sudo apt-get install -y devscripts thunar thunar-data || initError "Could not install latest thunar and thunar-data"
 	message_ends
