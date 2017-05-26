@@ -5,10 +5,10 @@ Bash script to patch `XFCE Thunar` to be able to use custom actions everywhere.
 By default, most actions are disabled in network folders, Desktop, ec.  
 Even the default action `Open terminal here` is disabled in network shares.  
   
-**`XAP` will install apt-get packages and dependencies without confirmation,**   
+**`xap.sh` will install apt-get packages and dependencies without confirmation,**   
 **it will only ask for confirmation to install the modified thunar package.**  
   
-`XAP` will ask for confirmation before deleting the work folder or installing Thunar.  
+`xap.sh` will ask for confirmation before deleting the work folder or installing Thunar.  
 It is possible to avoid the confirmations by using the execution parameters `-f`, `-k`, `-d`.  
 # Disclaimer
 *XAP should be safe and has been tested on Ubuntu16+XFCE4, Xubuntu16, Mint17.3 (32bit & 64bit), however...*  
@@ -39,7 +39,7 @@ git clone https://github.com/tavinus/xap.sh.git
 cd xap.sh
 ./xap.sh --help
 ```
-*If you use `git clone` or the zip/tarball, `xap` will detect the local patch file and use it, instead of downloading it from the internet.* 
+*If you use `git clone` or the zip/tarball, `xap.sh` will detect the local patch file and use it, instead of downloading it from the internet.* 
 # Example Runs
 #### Just run
 ```
@@ -103,7 +103,7 @@ Ciao
 ```
 # Following `log file` during execution
 Use this command on another terminal window  
-*You need to run this AFTER starting `xap`, obviusly*
+*You need to run this AFTER starting `xap.sh`, obviusly*
 ```
 tail -f /tmp/xap_run.log
 ```
