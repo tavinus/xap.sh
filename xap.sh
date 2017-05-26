@@ -51,7 +51,16 @@ TAVINUS_PATCH_URL='https://raw.githubusercontent.com/tavinus/xap.sh/master/patch
 PATCH_URL="$XFCE_PATCH_URL"
 
 # will use local patch if found
-LOCAL_PATCH_FILE="$(dirname $0)/patches/patch3482.patch"
+LOCAL_PATCH_FILE="$(readlink -f $(dirname $0 2>/dev/null)/patches/patch3482.patch 2>/dev/null)"
+
+
+#if [[ -r "$LOCAL_PATCH_FILE" ]]; then
+#	echo yes
+#else
+#	echo no
+#fi
+#exit 0
+
 
 # Basic Sanity
 init_check() {
@@ -110,13 +119,14 @@ main() {
 	cd thunar-* >/dev/null 2>&1 || initError "Could not relocate to Thunar source folder"
 	message_ends
 
-	if [[ -f "$LOCAL_PATCH_FILE" ]]; then
-		XAP_STATUS="Using local patch file: $LOCAL_PATCH_FILE"
+	if [[ -r "$LOCAL_PATCH_FILE" ]]; then
+		XAP_STATUS="Using local patch file:"
 		message_starts
 		dRun cp "$LOCAL_PATCH_FILE" ./ || initError "Could not copy Patch to work folder"
 		message_ends
+		echo "       $LOCAL_PATCH_FILE"
 	else
-		XAP_STATUS="Downloading Patch"
+		XAP_STATUS="Downloading Patch --"
 		message_starts
 		if [[ -x "$WGET_BIN" ]]; then
 			dRun "$WGET_BIN" "$PATCH_URL" -O patch3482.patch || initError "Could not download Patch"
