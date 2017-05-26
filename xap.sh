@@ -127,7 +127,7 @@ main() {
 		message_ends
 		echo "       $LOCAL_PATCH_FILE"
 	else
-		XAP_STATUS="Downloading Patch --"
+		XAP_STATUS="Downloading Patch"
 		message_starts
 		if [[ -x "$WGET_BIN" ]]; then
 			dRun "$WGET_BIN" "$PATCH_URL" -O patch3482.patch || initError "Could not download Patch"
