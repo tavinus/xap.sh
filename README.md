@@ -17,7 +17,7 @@ USE AT YOUR OWN RISK!**
 # How To
 ## Enable source-code repository
 This script uses `apt-get build-dep(s)` to prepare the environment.  
-In order to use this, you will need to have source-code repositoies enabled.  
+In order to use this, you will need to have source-code repositories enabled.  
 The easiest way is through `Software Updater → Settings → Ubuntu Software Tab → Source code`.  
 See screenshots at the end of this page.
 ## Download
