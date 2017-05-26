@@ -120,7 +120,7 @@ $ ./xap.sh --help
 
 XAP - XFCE Actions Patcher v0.0.1
 
-Usage: xap.sh [-f]
+Usage: xap.sh [-f -d -k]
 
 Options:
   -V, --version           Show program name and version and exits
@@ -137,14 +137,19 @@ Options:
   -k, --keep              Do not ask to delete work folder at the end
                           Keeps files when XAP finishes with success
 
-WORK FOLDER:
+Work Folder:
  Location: /home/tavinus/xap_patch_temp
  Use --delete and --keep together to delete at the start of execution
  (if exists) and keep at the end without prompting anything.
 
-Notes:
-  Please make sure you enable source-code repositories in your
-  apt-sources. Easiest way is with the Updater GUI.
+Patch File:
+ The local patch file will be always used if available, download is disabled.
+ If there is no local file, wget or curl will be used to download it.
+ Use the "-m" parameter to download the patch from the github mirror.
+
+Apt-get Sources:
+ Please make sure you enable source-code repositories in your
+ apt-sources. Easiest way is with the Updater GUI.
 
 Examples:
   ./xap.sh             # will ask for confirmations
