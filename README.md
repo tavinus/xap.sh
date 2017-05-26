@@ -110,7 +110,7 @@ Ciao
 ```
 # Following `log file` during execution
 Use this command on another terminal window  
-*You need to run this AFTER starting `xap.sh`, obviusly*
+*You need to run this AFTER starting `xap.sh`, obviously*
 ```
 tail -f /tmp/xap_run.log
 ```
