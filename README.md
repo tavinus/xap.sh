@@ -19,7 +19,7 @@ USE AT YOUR OWN RISK!**
 This script uses `apt-get build-dep(s)` to prepare the environment.  
 In order to use this, you will need to have source-code repositories enabled.  
 The easiest way is through `Software Updater → Settings → Ubuntu Software Tab → Source code`.  
-See screenshots at the end of this page.
+Screenshots for Xubuntu16 available at the end of this page.
 ## Download
 with `wget`
 ```
