@@ -23,7 +23,7 @@ In order to use this, you will need to have source-code repositories enabled.
 The easiest way is through `Software Updater → Settings → Ubuntu Software Tab → Source code`.  
 Screenshots for Xubuntu16 available at the end of this page.
 ## Download
-**NOTE:** *If you use `git clone` or the zip/tarball, `xap.sh` will detect the local patch file and use it, instead of downloading it from the internet. This will also remove the dependency on `curl` or `wget` and disable the `--mirror` parameter.*  
+**NOTE:** *If you use `git clone` or the [zip](https://github.com/tavinus/xap.sh/archive/master.zip), `xap.sh` will detect the local patch file and use it, instead of downloading it from the internet. This will also remove the dependency on `curl` or `wget` and disable the `--mirror` parameter.*  
 ##### get only `xap.sh` using `wget`
 ```
 wget 'https://raw.githubusercontent.com/tavinus/xap.sh/master/xap.sh' -O ./xap.sh && chmod +x ./xap.sh
