@@ -94,7 +94,8 @@ main() {
 
 	XAP_STATUS="Installing thunar, thunar-data and devscripts"
 	message_starts
-	dRun sudo apt-get install -y devscripts thunar thunar-data || initError "Could not install latest thunar and thunar-data"
+	dRun sudo apt-get install -y thunar thunar-data || initError "Could not install latest thunar and thunar-data"
+	dRun sudo apt-get install -y devscripts
 	message_ends
 
 	XAP_STATUS="Installing build dependencies for thunar"
