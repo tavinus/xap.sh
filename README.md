@@ -173,3 +173,9 @@ This shows how to enable source-code download at Xubuntu16 `Software Updater`.
 ![xubuntu software update1](https://raw.githubusercontent.com/tavinus/xap.sh/master/screenshots/xubuntu16-01.jpg)  
   
 ![xubuntu software update2](https://raw.githubusercontent.com/tavinus/xap.sh/master/screenshots/xubuntu16-02.jpg)
+
+# Remove the Patch
+To restore the original unpatched Thunar use this command:
+```
+$ sudo apt-get --reinstall install thunar thunar-data
+```
