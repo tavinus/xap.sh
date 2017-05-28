@@ -32,7 +32,7 @@ cd xap.sh
 ./xap.sh --help
 ```
 #### Manual zip download
-1. [Download this repository zip file](https://github.com/tavinus/xap.sh/archive/master.zip).
+1. [Download the master zip file](https://github.com/tavinus/xap.sh/archive/master.zip).
 2. Extract the zip and open a `terminal` inside the `xap.sh` folder
 3. If `xap.sh` is not set as executable, use:
     - `chmod +x ./xap.sh`
