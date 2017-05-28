@@ -5,7 +5,8 @@ Bash script to patch `XFCE Thunar` to be able to use custom actions everywhere.
 By default, most actions are disabled in network folders, Desktop, etc.  
 Even the default action `Open terminal here` is disabled in network shares.  
   
-Works only on **debian-based distros** like `Debian`, `Ubuntu` and `Mint` with `XFCE4`.   
+XAP works only on **debian-based distros** like `Debian`, `Ubuntu` and `Mint` with `XFCE4`.   
+If you are interested on patching a **non debian-based system**, [open a new issue](https://github.com/tavinus/xap.sh/issues/new) and I may try to help.  
   
 **`xap.sh` will install apt-get packages and dependencies without confirmation,**   
 **it will only ask for confirmation to install the modified thunar package.**  
