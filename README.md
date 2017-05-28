@@ -166,7 +166,7 @@ Examples:
 # Related Links
  - [Bug #899624 - ubuntu launchpad](https://bugs.launchpad.net/ubuntu/+source/thunar/+bug/899624?comments=all)
  - [thunar actions only on local drive - ubuntu forum](https://ubuntuforums.org/showthread.php?t=1889890)
- - [thunar actions on shared folders](https://ubuntuforums.org/showthread.php?t=2362287)
+ - [thunar actions on shared folders - ubuntu forum](https://ubuntuforums.org/showthread.php?t=2362287)
 
 # Screenshots
 ## Enabling source-code repositories
