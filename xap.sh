@@ -157,7 +157,7 @@ main() {
 	XAP_STATUS="Locating libthunarx deb package"
 	message_starts
 	libthunarx_deb="$(ls ../libthunarx* | grep -v dev)"
-	[[ -z "$libthunarx_deb" || ! -f "$libthunarx_deb" ]] && initError "Cloud not locate libthunarx deb package, you may try to install it manually."$'\n'"File string: $libthunarx_deb"
+	[[ -z "$libthunarx_deb" || ! -f "$libthunarx_deb" ]] && initError "Could not locate libthunarx deb package, you may try to install it manually."$'\n'"File string: $libthunarx_deb"
 	message_ends
 
 	if ! no_confirm; then
