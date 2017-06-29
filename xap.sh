@@ -24,7 +24,7 @@
 # https://github.com/tavinus/xap.sh
 
 
-XAP_VERSION='0.0.1'
+XAP_VERSION='0.0.2'
 BANNERSTRING="XAP - XFCE Actions Patcher v$XAP_VERSION"
 
 TRUE=0
@@ -53,15 +53,6 @@ PATCH_URL="$XFCE_PATCH_URL"
 # will use local patch if found
 LOCAL_PATCH_FILE="$(readlink -f $(dirname $0 2>/dev/null)/patches/patch3482.patch 2>/dev/null)"
 
-
-#if [[ -r "$LOCAL_PATCH_FILE" ]]; then
-#	echo yes
-#else
-#	echo no
-#fi
-#exit 0
-
-
 # Basic Sanity
 init_check() {
 	if [[ -f "$XAP_LOGFILE" ]]; then
@@ -75,6 +66,7 @@ init_check() {
 	[[ ! -x "$WGET_BIN" && ! -x "$CURL_BIN" && ! -r "$LOCAL_PATCH_FILE" ]] && initError "No local patch and no curl or wget installed to download the patch."
 	command -v grep >/dev/null 2>&1 || initError "'grep' executable was not found. We need it installed and visible in \$PATH."
 	local apt_sources="$(cat /etc/apt/sources.list 2>/dev/null | grep deb-src | grep -v '^#')"
+	[[ -z "$apt_sources" ]] && apt_sources="$(cat /etc/apt/sources.list.d/* 2>/dev/null | grep deb-src | grep -v '^#')"
 	[[ -z "$apt_sources" ]] && initError "No source-code repositories were active in /etc/apt/sources.list."$'\n'"Please enable source-code repos and try again."
 	return $TRUE
 }
